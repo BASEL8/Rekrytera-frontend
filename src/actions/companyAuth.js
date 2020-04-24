@@ -15,6 +15,7 @@ export const preSignup = (user) => {
 }
 export const signup = (activationToken) => {
   return fetch(`${API}/company/signup`, {
+    mode: 'no-cors',
     method: 'POST',
     headers: {
       Accept: 'application/json',
