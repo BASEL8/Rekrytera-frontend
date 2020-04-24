@@ -4,6 +4,7 @@ import { handleResponse } from './auth'
 
 export const preSignup = (user) => {
   return fetch(`${API}/company/pre-signup`, {
+    mode: 'no-cors',
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -170,7 +171,7 @@ export const declineContactRequestFromUser = (token, userId) => {
     return res.json()
   }).catch(error => error)
 }
-export const blockUser = (token,userId)=>{
+export const blockUser = (token, userId) => {
   return fetch(`${API}/company/block`, {
     method: 'POST',
     headers: {
@@ -181,7 +182,7 @@ export const blockUser = (token,userId)=>{
     body: JSON.stringify({ userId })
   }).then(res => res.json()).catch(error => error)
 }
-export const unblockUser = (token,userId)=>{
+export const unblockUser = (token, userId) => {
   return fetch(`${API}/company/unblock`, {
     method: 'POST',
     headers: {
@@ -192,7 +193,7 @@ export const unblockUser = (token,userId)=>{
     body: JSON.stringify({ userId })
   }).then(res => res.json()).catch(error => error)
 }
-export const forgetPassword = (email)=>{
+export const forgetPassword = (email) => {
   return fetch(`${API}/company/forget-password`, {
     method: 'PUT',
     headers: {
@@ -205,7 +206,7 @@ export const forgetPassword = (email)=>{
     return res.json()
   }).catch(error => error)
 }
-export const resetPassword = (resetPasswordLink, newPassword )=>{
+export const resetPassword = (resetPasswordLink, newPassword) => {
   return fetch(`${API}/company/reset-password`, {
     method: 'PUT',
     headers: {
